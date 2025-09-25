@@ -2,8 +2,6 @@ import java.util.*;
 
 public class FindMaximum{
 	static int i=0;
-	// Using Recursion
-	
 	static int maxElement(int [] arr, int max){
 		
 		if( i == arr.length){
