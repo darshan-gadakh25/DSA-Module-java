@@ -45,32 +45,53 @@ public class Practice{
 			head=newNode;
 		}
 	}
-	/*
+	
 	void insertLast(int data){
 		Node n=head;
 		Node newNode=new Node(data);
-		newNode.next=head;
-		if(n != null){
-			head.prev=newNode;
-			head=newNode;
+		while(n.next != null){
+            n=n.next;
+           
 		}
+        n.next=newNode;
+        newNode.prev=n;
 	}
-	
+	 
 	void insertMiddle(Node prevNode,int data){
 		Node n=head;
 		Node newNode=new Node(data);
 		
 		newNode.next=prevNode.next;
-		prevNode.prev=newNode;
-		
-		if(n != null){
-			head.prev=newNode;
-			head=newNode;
-		}
+		newNode.prev=prevNode;
+		prevNode.next=newNode;
+		prevNode.next.prev=newNode;
 	}
-	*/
 	
 	
+	void deletefirst(){
+        if(head == null){
+            return;
+        }
+
+          head=head.next;
+            head.prev=null;
+
+    }
+
+    void deleteLast(){
+        Node n=head;
+        if(n == null){
+            return;
+        }
+
+          while (n != null) {
+            n=n.next;
+          }
+
+          n.next= null;
+
+
+    }
 	
 
 	
@@ -104,6 +125,29 @@ public class Practice{
         System.out.println();
 		System.out.println("Priing reverser Show data->");
 		p.displayReverse();
+         System.out.println();
+
+        System.out.println();
+		System.out.println("adding last Show data->");
+		p.insertLast(80);
+		p.display();
 		
+       
+         System.out.println();
+		System.out.println("adding last Show data->");
+		p. insertMiddle(sec,60);
+		p.display();
+		
+        
+        System.out.println();
+		System.out.println("deleting frist Show data->");
+		p. deletefirst();
+		p.display();
+
+        System.out.println();
+		System.out.println("deleting last Show data->");
+		p. deleteLast();
+		p.display();
+        
 	}
 }

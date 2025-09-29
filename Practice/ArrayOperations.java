@@ -108,3 +108,39 @@ class ArrayOperations{
 	
 	}
 }
+
+
+/*
+Scanner sc = new Scanner(System.in);
+        int choice, key;
+        do {
+            System.out.println("\n--- Binary Search Tree Menu ---");
+            System.out.println("1. Insert");
+            System.out.println("2. Delete");
+            System.out.println("3. Search");
+            System.out.println("4. Inorder Traversal");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+               
+                    break;
+                case 2:
+                   
+                    break;
+                case 3:
+                   
+                    break;
+                case 4:
+                   
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid Choice!");
+            }
+        } while (choice != 5);
+		*/

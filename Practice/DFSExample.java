@@ -28,7 +28,7 @@ public class DFSExample {
 
         for (int neighbor : adjList.getOrDefault(node, new ArrayList<>())) {        // current node connect with neighbor[2,3]
             if (!visited.contains(neighbor)) {                                      // not visited neighbor then
-                dfsRecursive(neighbor, visited);                                    // Recurse on unvisited neighbor
+					(neighbor, visited);                                    // Recurse on unvisited neighbor
             }    
         }
     }

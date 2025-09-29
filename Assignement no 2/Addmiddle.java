@@ -78,12 +78,64 @@ public class Addmiddle{
 		}
 		
 	}
+	
+	Node SortingList(){
+		for(Node i=head;i!=null;i=i.next){
+			for(Node j=i.next;j!=null;j=j.next){
+				if(i.data > j.data){
+					int temp=i.data;
+					i.data=j.data;
+					j.data=temp;
+				}
+			}
+		}
+		return head;
+	}
+	
+	Node reverselist(){
+		Node oldhead=head;
+		head=null;
+	
+		while( oldhead!= null){
+			Node temp=oldhead;
+			oldhead=oldhead.next;
+			temp.next=head;
+			head=temp;
+		}
+		return head;
+	}
+	
+	Node reversion(Node n){
+		if(n.next == null){
+			head=n;
+			return n;
+		}
+		else{
+			Node t=reversion(n.next);
+			t.next=n;
+			n.next=null;
+			return n;
+		}
+	}
+	
+	private void reverseDisplay(Node n){
+		if(n == null)
+			return;
+		reverseDisplay(n.next);
+		System.out.print(n.data+" ");
+		
+	}
+	public  void reverseDisplay(){
+		 reverseDisplay(head);
+		
+	}
+	
 	public static void main(String [] args){
 		Addmiddle lp=new Addmiddle();
 		
-		lp.head=new Node(10);
+		lp.head=new Node(80);
 		Node second=new Node(20);
-		Node third=new Node(30);
+		Node third=new Node(90);
 		Node foru=new Node(40);
 		
 		lp.head.next=second;
@@ -95,14 +147,13 @@ public class Addmiddle{
 		System.out.println("show all  element");
 		lp.display();
 		
-		
 		System.out.println("");
 		System.out.println(" after adding show all  element");
 		lp.addmiddle(3,44);
 		lp.display();
 		
 		System.out.println("");
-		System.out.println(" after  shoelting first w all  element");
+		System.out.println(" after  delteign   first w all  element");
 		lp.deleteFirst();
 		lp.display();
 		
@@ -120,7 +171,24 @@ public class Addmiddle{
 		
 
 
+		System.out.println("");
+		System.out.println(" after reversing   element");
+		lp.reverselist();
+		lp.display();
 		
-
+		System.out.println("");
+		System.out.println(" after sorting element");
+		lp.SortingList();
+		lp.display();
+		
+		
+		System.out.println("");
+		System.out.println(" after reverse using recuision element");
+		lp.reversion(lp.head);
+		lp.display();
+		
+		System.out.println("");
+		System.out.println("Display");
+		lp.reverseDisplay(lp.head);
 	}
 }
